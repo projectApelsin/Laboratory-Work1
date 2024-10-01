@@ -1,13 +1,17 @@
 package com.dreamsdestroyer;
 
+import java.util.Scanner;
+
 public class Main {
 public static void main(String[] args) {
-    String word = "lev";
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Введіть слово");
+    String answer = scanner.nextLine();
 
-    if (isPalindrome(word)) {
-        System.out.println(word + " - это палиндром.");
+    if (isPalindrome(answer)) {
+        System.out.println(answer + " - це палідром.");
     } else {
-        System.out.println(word + " - это не палиндром.");
+        System.out.println(answer + " - це не палідром.");
     }
 }
 
@@ -17,12 +21,10 @@ public static boolean isPalindrome(String word) {
 
 
     for (int i = 0; i < length / 2; i++) {
-
-        if (word.charAt(i) == word.charAt(i)) {
-        } else {
+        if (word.charAt(i) != word.charAt(length - i - 1)) {
             return false;
         }
     }
     return true;
-}
+    }
 }
